@@ -8,12 +8,16 @@
 
 import UIKit
 
-class WordsTableViewController: UITableViewController {
+class WordsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var words: [Word]?
+    @IBOutlet weak var wordsTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        wordsTableView.delegate = self
+        wordsTableView.dataSource = self
 
         let word1 = Word(id: 1, text: "להדליק", translation: "to turn on", category: .noun)
         let word2 = Word(id: 2, text: "שלום", translation: "hi, peace, bye", category: .verb)
@@ -25,13 +29,13 @@ class WordsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return words?.count ?? 0
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath)
 
         if let word = words?[indexPath.row] {
@@ -49,7 +53,7 @@ class WordsTableViewController: UITableViewController {
             
             let wordVC = segue.destination as? WordDetailViewController
             
-            guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+            guard let cell = sender as? UITableViewCell, let indexPath = wordsTableView.indexPath(for: cell) else {
                 return
             }
             
