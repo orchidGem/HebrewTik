@@ -15,8 +15,8 @@ class WordsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let word1 = Word(id: 1, text: "text1", category: .noun)
-        let word2 = Word(id: 2, text: "text2", category: .verb)
+        let word1 = Word(id: 1, text: "להדליק", translation: "to turn on", category: .noun)
+        let word2 = Word(id: 2, text: "שלום", translation: "hi, peace, bye", category: .verb)
         
         words = [word1, word2]
 
@@ -39,6 +39,20 @@ class WordsTableViewController: UITableViewController {
         }
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowWord" {
+            
+            let wordVC = segue.destination as? WordDetailViewController
+            
+            guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+                return
+            }
+            
+            wordVC?.word = words?[indexPath.row]
+            
+        }
     }
 
 }

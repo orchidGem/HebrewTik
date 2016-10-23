@@ -18,9 +18,10 @@ class Word {
     var example: String?
     var notes: String?
     
-    init(id: Int, text: String, category: Category) {
+    init(id: Int, text: String, translation: String, category: Category) {
         self.id = id
         self.text = text
+        self.translation = translation
         self.category = category
     }
     
