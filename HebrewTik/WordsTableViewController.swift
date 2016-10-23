@@ -37,7 +37,10 @@ class WordsTableViewController: UITableViewController {
         if let word = words?[indexPath.row] {
             cell.textLabel?.text = word.text
         }
-
+        
+        cell.textLabel?.font = UIFont(name: "Arial Hebrew", size: 30)
+        cell.textLabel?.textAlignment = .right
+        
         return cell
     }
     
