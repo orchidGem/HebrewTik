@@ -9,10 +9,16 @@
 import UIKit
 
 class WordsTableViewController: UITableViewController {
+    
+    var words: [Word]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let word1 = Word(id: 1, text: "text1", category: .noun)
+        let word2 = Word(id: 2, text: "text2", category: .verb)
+        
+        words = [word1, word2]
 
     }
 
@@ -20,15 +26,17 @@ class WordsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+
+        return words?.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath)
 
-        // Configure the cell...
+        if let word = words?[indexPath.row] {
+            cell.textLabel?.text = word.text
+        }
 
         return cell
     }
