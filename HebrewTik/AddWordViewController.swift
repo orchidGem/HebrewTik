@@ -32,7 +32,7 @@ class AddWordViewController: UIViewController {
         
         let word = Word(id: 1, text: wordText, translation: translationText)
         var words = Words.readOrdersFromArchive()
-        words?.append(word)
+        words?.insert(word, at: 0)
         
         if let words = words {
             if(Words.saveOrdersToArchive(orders: words)) {
