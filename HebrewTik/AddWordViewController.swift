@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddWordViewController: UIViewController {
+class AddWordViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var textTextField: UITextField!
@@ -16,6 +16,9 @@ class AddWordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textTextField.delegate = self
+        translationTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -41,4 +44,9 @@ class AddWordViewController: UIViewController {
         }
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
