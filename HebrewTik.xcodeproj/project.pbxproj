@@ -16,6 +16,7 @@
 		D1C222C31DBD018A0084156E /* WordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C222C21DBD018A0084156E /* WordsTableViewController.swift */; };
 		D1C222C51DBD051B0084156E /* WordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C222C41DBD051B0084156E /* WordDetailViewController.swift */; };
 		D1C222C71DBD13AC0084156E /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C222C61DBD13AC0084156E /* AddWordViewController.swift */; };
+		D1DD8BE11DBE296B006DA41D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD8BE01DBE296B006DA41D /* Words.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D1C222C21DBD018A0084156E /* WordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsTableViewController.swift; sourceTree = "<group>"; };
 		D1C222C41DBD051B0084156E /* WordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDetailViewController.swift; sourceTree = "<group>"; };
 		D1C222C61DBD13AC0084156E /* AddWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
+		D1DD8BE01DBE296B006DA41D /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				D1C222B81DBCEC8C0084156E /* word.swift */,
+				D1DD8BE01DBE296B006DA41D /* Words.swift */,
 				D1C222BA1DBCEF2D0084156E /* category.swift */,
 			);
 			name = Models;
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1DD8BE11DBE296B006DA41D /* Words.swift in Sources */,
 				D1C222A51DBCEC570084156E /* AppDelegate.swift in Sources */,
 				D1C222C51DBD051B0084156E /* WordDetailViewController.swift in Sources */,
 				D1C222C71DBD13AC0084156E /* AddWordViewController.swift in Sources */,

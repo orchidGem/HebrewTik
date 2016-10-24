@@ -10,6 +10,10 @@ import UIKit
 
 class AddWordViewController: UIViewController {
     
+    
+    @IBOutlet weak var textTextField: UITextField!
+    @IBOutlet weak var translationTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,5 +23,22 @@ class AddWordViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func addWord(_ sender: AnyObject) {
+        
+        guard let wordText = textTextField.text, let translationText = translationTextField.text  else {
+            return
+        }
+        
+        let word = Word(id: 1, text: wordText, translation: translationText)
+        var words = Words.readOrdersFromArchive()
+        words?.append(word)
+        
+        if let words = words {
+            if(Words.saveOrdersToArchive(orders: words)) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
 }

@@ -18,12 +18,13 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
         
         wordsTableView.delegate = self
         wordsTableView.dataSource = self
-
-        let word1 = Word(id: 1, text: "להדליק", translation: "to turn on", category: .noun)
-        let word2 = Word(id: 2, text: "שלום", translation: "hi, peace, bye", category: .verb)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
-        words = [word1, word2]
-
+        words = Words.readOrdersFromArchive()
+        wordsTableView.reloadData()
     }
 
 
