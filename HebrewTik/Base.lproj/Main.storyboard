@@ -127,15 +127,31 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfP-4m-m66">
                                 <frame key="frameInset" minX="123" minY="368" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Record Audio">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="y1V-UW-lbj" eventType="touchUpInside" id="Mim-ZX-OyK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I81-c6-SaH">
+                                <frame key="frameInset" minX="123" minY="426" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Audio">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudioRecording:" destination="y1V-UW-lbj" eventType="touchUpInside" id="ok6-Yw-GtT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="playButton" destination="I81-c6-SaH" id="9KA-MR-R9Z"/>
+                        <outlet property="recordButton" destination="zfP-4m-m66" id="BDy-JT-5IP"/>
                         <outlet property="textTextField" destination="6ue-CW-aYo" id="I4i-rd-hWR"/>
                         <outlet property="translationTextField" destination="Egl-43-SIz" id="dlk-Zk-EUY"/>
                     </connections>

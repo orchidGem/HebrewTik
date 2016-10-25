@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D189DBAA1DBF4DF60079F3F5 /* AudioRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189DBA91DBF4DF60079F3F5 /* AudioRecorderViewController.swift */; };
 		D1C222A51DBCEC570084156E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C222A41DBCEC570084156E /* AppDelegate.swift */; };
 		D1C222AA1DBCEC570084156E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C222A81DBCEC570084156E /* Main.storyboard */; };
 		D1C222AC1DBCEC570084156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C222AB1DBCEC570084156E /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D189DBA91DBF4DF60079F3F5 /* AudioRecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewController.swift; sourceTree = "<group>"; };
 		D1C222A11DBCEC570084156E /* HebrewTik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HebrewTik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C222A41DBCEC570084156E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C222A91DBCEC570084156E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D1C222C21DBD018A0084156E /* WordsTableViewController.swift */,
 				D1C222C41DBD051B0084156E /* WordDetailViewController.swift */,
 				D1C222C61DBD13AC0084156E /* AddWordViewController.swift */,
+				D189DBA91DBF4DF60079F3F5 /* AudioRecorderViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1DD8BE11DBE296B006DA41D /* Words.swift in Sources */,
+				D189DBAA1DBF4DF60079F3F5 /* AudioRecorderViewController.swift in Sources */,
 				D1C222A51DBCEC570084156E /* AppDelegate.swift in Sources */,
 				D1C222C51DBD051B0084156E /* WordDetailViewController.swift in Sources */,
 				D1C222C71DBD13AC0084156E /* AddWordViewController.swift in Sources */,

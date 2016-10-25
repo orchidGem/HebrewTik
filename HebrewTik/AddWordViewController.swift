@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
-class AddWordViewController: UIViewController, UITextFieldDelegate {
+class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
     
     @IBOutlet weak var textTextField: UITextField!
     @IBOutlet weak var translationTextField: UITextField!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
+    var recordedAudio: AVAudioPlayer!
+    var audioFilename: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +28,28 @@ class AddWordViewController: UIViewController, UITextFieldDelegate {
         textTextField.delegate = self
         translationTextField.delegate = self
 
-        // Do any additional setup after loading the view.
+        //hide record button
+        recordButton.isHidden = true
+        
+        // Request user permission to record audio
+        recordingSession = AVAudioSession.sharedInstance()
+        
+        do {
+            try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        // show button
+                        self.recordButton.isHidden = false
+                    } else {
+                        //failed to record
+                    }
+                }
+            }
+        } catch {
+            // failed to record
+        }
     }
     @IBAction func cancel(_ sender: AnyObject) {
         
@@ -51,4 +80,15 @@ class AddWordViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    @IBAction func recordAudio(_ sender: AnyObject) {
+        recordTapped()
+    }
+    
+    @IBAction func playAudioRecording(_ sender: AnyObject) {
+        playAudio()
+    }
+    
+    
 }
