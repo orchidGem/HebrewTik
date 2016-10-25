@@ -29,10 +29,12 @@ class AddWordViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addWord(_ sender: AnyObject) {
         
+        // if text fields are empty, return
         guard let wordText = textTextField.text, let translationText = translationTextField.text  else {
             return
         }
-        
+
+        // create word and append to words array
         let word = Word(id: 1, text: wordText, translation: translationText)
         var words = Words.readOrdersFromArchive()
         words?.insert(word, at: 0)
