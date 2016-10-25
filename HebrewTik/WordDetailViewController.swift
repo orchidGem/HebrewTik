@@ -21,6 +21,12 @@ class WordDetailViewController: UIViewController {
         
         textLabel.text = word?.text
         translationLabel.text = word?.translation
+        
+        if let audio = word?.audio {
+            print("audio: \(audio)")
+        } else {
+            print("no audio file")
+        }
 
     }
 

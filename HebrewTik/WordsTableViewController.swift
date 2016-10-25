@@ -23,7 +23,7 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        words = Words.readOrdersFromArchive()
+        words = Words.readWordsFromArchive()
         wordsTableView.reloadData()
     }
 

@@ -44,6 +44,10 @@ class Word: NSObject, NSCoding {
         aCoder.encode(self.notes, forKey: "notes")
         aCoder.encode(self.dateAdded, forKey: "dateAdded")
     }
+    
+    class func listProperties() {
+        print("ID:")
+    }
         
 }
 

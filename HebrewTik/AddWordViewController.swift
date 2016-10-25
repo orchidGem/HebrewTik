@@ -21,6 +21,9 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     var audioRecorder: AVAudioRecorder!
     var recordedAudio: AVAudioPlayer!
     var audioFilename: URL!
+    var words: [Word]?
+    var wordID: Int!
+    var audioRecorded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +54,21 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
             // failed to record
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        words = Words.readWordsFromArchive()
+        if let words = words {
+            wordID = words.count + 1
+        } else {
+            wordID = 1
+        }
+        
+        print("Word ID: \(wordID)")
+        
+    }
+    
     @IBAction func cancel(_ sender: AnyObject) {
         
         self.dismiss(animated: true, completion: nil)
@@ -58,20 +76,31 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     
     @IBAction func addWord(_ sender: AnyObject) {
         
+        print("adding word")
+        
         // if text fields are empty, return
         guard let wordText = textTextField.text, let translationText = translationTextField.text  else {
+            print("must enter text")
             return
         }
 
         // create word and append to words array
-        let word = Word(id: 1, text: wordText, translation: translationText)
-        var words = Words.readOrdersFromArchive()
-        words?.insert(word, at: 0)
+        let word = Word(id: wordID, text: wordText, translation: translationText)
         
-        if let words = words {
-            if(Words.saveOrdersToArchive(orders: words)) {
-                self.dismiss(animated: true, completion: nil)
-            }
+        // if audio has been recorded, set the audio file property name
+        if audioRecorded {
+            word.audio = "word\(wordID!)"
+        }
+        
+        if let _ = words {
+            words?.insert(word, at: 0)
+        } else {
+            words = [word]
+        }
+        
+        
+        if(Words.saveWordsToArchive(words: words!)) {
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -83,6 +112,7 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     
     
     @IBAction func recordAudio(_ sender: AnyObject) {
+        audioRecorded = true
         recordTapped()
     }
     

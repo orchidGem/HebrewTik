@@ -11,7 +11,7 @@ import AVFoundation
 extension AddWordViewController {
     
     func startRecording() {
-        audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+        audioFilename = getDocumentsDirectory().appendingPathComponent("word\(wordID).m4a")
         
         print("Audio File Name")
         print(audioFilename)

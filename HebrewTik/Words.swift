@@ -26,14 +26,14 @@ class Words: NSObject, NSCoding {
             documentsDirectory.appendingPathComponent("word").path
     }
     
-    // read and return array of orders
-    class func readOrdersFromArchive() -> [Word]? {
+    // read and return array of words
+    class func readWordsFromArchive() -> [Word]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: archiveFilePath()) as? [Word]
     }
     
-    // save the orders to disc
-    class func saveOrdersToArchive(orders: [Word]) -> Bool {
-        return NSKeyedArchiver.archiveRootObject(orders, toFile: archiveFilePath())
+    // save the words to disc
+    class func saveWordsToArchive(words: [Word]) -> Bool {
+        return NSKeyedArchiver.archiveRootObject(words, toFile: archiveFilePath())
     }
 
 }
