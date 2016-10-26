@@ -37,10 +37,10 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath) as! WordTableViewCell
 
         if let word = words?[indexPath.row] {
-            cell.textLabel?.text = word.text
+            cell.wordLabel.text = word.text
         }
         
         if indexPath.row % 2 == 0 {
