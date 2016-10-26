@@ -93,10 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				D1C222C21DBD018A0084156E /* WordsTableViewController.swift */,
+				D1D672741DC107EB008C1173 /* WordTableViewCell.swift */,
 				D1C222C41DBD051B0084156E /* WordDetailViewController.swift */,
 				D1C222C61DBD13AC0084156E /* AddWordViewController.swift */,
 				D189DBA91DBF4DF60079F3F5 /* AudioRecorderViewController.swift */,
-				D1D672741DC107EB008C1173 /* WordTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
