@@ -32,14 +32,14 @@
                                                     <frame key="frameInset" minX="90" minY="14" width="277" height="51"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gZ-bH-NTd">
-                                                    <frame key="frameInset" minX="8" minY="24" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gZ-bH-NTd">
+                                                    <frame key="frameInset" minX="19" minY="27" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Play">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="ic_volume_up">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="playRecording:" destination="5Aw-WS-1mj" eventType="touchUpInside" id="Wvc-4j-gDx"/>
@@ -47,7 +47,6 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="playAudioButton" destination="0gZ-bH-NTd" id="vYD-5a-jsJ"/>
                                             <outlet property="wordLabel" destination="OZ8-oW-ZKd" id="yps-2O-ZHJ"/>
@@ -57,7 +56,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eq-dz-Z38">
-                                <color key="backgroundColor" red="0.047129708185581265" green="0.85588606200951456" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.031372549019607843" green="0.38823529411764707" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Vv5-MG-t9j"/>
                                 </constraints>
@@ -160,11 +159,11 @@
                                     <action selector="recordAudio:" destination="y1V-UW-lbj" eventType="touchUpInside" id="Mim-ZX-OyK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I81-c6-SaH">
-                                <frame key="frameInset" minX="123" minY="426" width="129" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I81-c6-SaH">
+                                <frame key="frameInset" minX="129" minY="429" width="118" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Play Audio">
+                                <state key="normal" title="  Play Audio" image="ic_volume_up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -211,10 +210,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueO-kA-Z7y">
-                                <frame key="frameInset" minX="151" minY="329" width="72" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueO-kA-Z7y">
+                                <frame key="frameInset" minX="175" minY="332" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play Audio"/>
+                                <state key="normal" image="ic_volume_up"/>
                                 <connections>
                                     <action selector="playRecording:" destination="9Xd-jV-xBt" eventType="touchUpInside" id="iCJ-XX-x1J"/>
                                 </connections>
@@ -256,4 +255,7 @@
             <point key="canvasLocation" x="3516" y="-106.59670164917542"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_volume_up" width="24" height="24"/>
+    </resources>
 </document>

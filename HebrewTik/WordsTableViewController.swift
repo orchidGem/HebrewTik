@@ -53,10 +53,14 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
         
+        // Apply Zebra colors to text
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.darkGray
+            cell.wordLabel.textColor = UIColor(red:0.38, green:0.19, blue:0.29, alpha:1.0)
+            //cell.backgroundColor = UIColor.darkGray
         } else {
-            cell.backgroundColor = UIColor.lightGray
+            cell.wordLabel.textColor = UIColor(red:0.03, green:0.39, blue:0.46, alpha:1.0)
+            
+            //cell.backgroundColor = UIColor.lightGray
         }
         
         return cell
