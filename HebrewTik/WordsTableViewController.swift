@@ -37,18 +37,20 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath) as! WordTableViewCell
         
-
+        // Set label text equal to word
         if let word = words?[indexPath.row] {
             cell.wordLabel.text = word.text
             
-            if let _ = word.audio {
+            // Show play button if audio exists
+            if let audio = word.audio {
+                cell.audioString = audio
                 cell.playAudioButton.isHidden = false
             } else {
                 cell.playAudioButton.isHidden = true
             }
-            
         }
         
         if indexPath.row % 2 == 0 {
@@ -56,11 +58,6 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
         } else {
             cell.backgroundColor = UIColor.lightGray
         }
-        
-        
-        cell.textLabel?.font = UIFont(name: "Arial Hebrew", size: 30)
-        cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.textAlignment = .right
         
         return cell
     }
