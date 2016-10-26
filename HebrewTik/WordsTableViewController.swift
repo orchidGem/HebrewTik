@@ -43,7 +43,14 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
             cell.textLabel?.text = word.text
         }
         
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.darkGray
+        } else {
+            cell.backgroundColor = UIColor.lightGray
+        }
+        
         cell.textLabel?.font = UIFont(name: "Arial Hebrew", size: 30)
+        cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.textAlignment = .right
         
         return cell
