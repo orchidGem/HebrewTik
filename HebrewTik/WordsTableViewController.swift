@@ -42,11 +42,11 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
         
         // Set label text equal to word
         if let word = words?[indexPath.row] {
+            cell.word = word
             cell.wordLabel.text = word.text
             
             // Show play button if audio exists
-            if let audio = word.audio {
-                cell.audioString = audio
+            if let _ = word.audio {
                 cell.playAudioButton.isHidden = false
             } else {
                 cell.playAudioButton.isHidden = true
