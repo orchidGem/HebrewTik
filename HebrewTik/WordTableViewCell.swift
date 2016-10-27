@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class WordTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
+class WordTableViewCell: UITableViewCell {
 
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var playAudioButton: UIButton!
@@ -33,11 +33,12 @@ class WordTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         print("play")
         
         audioFilename = getDocumentsDirectory().appendingPathComponent("\(audioString!).m4a")
+        print(audioFilename)
 
         do {
             let sound = try AVAudioPlayer(contentsOf: audioFilename!)
-            recordedAudio = sound
-            recordedAudio.delegate = self
+//            recordedAudio = sound
+            print("sound: \(sound.duration)")
             sound.volume = 1.0
             sound.play()
             playAudioButton.alpha = 0.5
@@ -54,8 +55,8 @@ class WordTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         return documentsDirectory
     }
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        playAudioButton.alpha = 1
-    }
+//    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+//        playAudioButton.alpha = 1
+//    }
 
 }

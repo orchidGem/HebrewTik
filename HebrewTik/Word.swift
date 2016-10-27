@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class Word: NSObject, NSCoding {
     var id: Int!
@@ -17,6 +18,7 @@ class Word: NSObject, NSCoding {
     var audio: String?
     var example: String?
     var notes: String?
+    var recordedAudio: AVAudioPlayer!
     
     
     init(id: Int, text: String, translation: String) {
@@ -45,8 +47,35 @@ class Word: NSObject, NSCoding {
         aCoder.encode(self.dateAdded, forKey: "dateAdded")
     }
     
-    class func listProperties() {
-        print("ID:")
+    func playAudioRecording() -> AVAudioPlayer? {
+        //return if word has no audio
+        guard let audio = audio else {
+            print("word has no audio recording")
+            return nil
+        }
+        
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(audio).m4a")
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOf: audioFilename)
+            recordedAudio = sound
+            sound.volume = 1.0
+            sound.play()
+            print("playing audio file")
+            return recordedAudio
+        } catch {
+            //failed
+            print("failed")
+            return nil
+        }
+        
+    }
+    
+    // helper method to return documents directory
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
     }
         
 }
