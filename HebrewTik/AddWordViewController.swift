@@ -67,6 +67,8 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
         
         print("Word ID: \(wordID)")
         
+        textTextField.isEnabled = false
+        
     }
     
     @IBAction func cancel(_ sender: AnyObject) {
@@ -120,5 +122,10 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
         playAudio()
     }
     
+    @IBAction func editWord(_ sender: AnyObject) {
+        
+        textTextField.isEnabled = true
+        textTextField.backgroundColor = UIColor.white
+    }
     
 }

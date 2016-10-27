@@ -53,5 +53,9 @@ class WordTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playAudioButton.alpha = 1
+    }
 
 }
