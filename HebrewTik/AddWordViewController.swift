@@ -16,6 +16,7 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     @IBOutlet weak var translationTextField: UITextField!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var exampleTextField: UITextField!
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -30,6 +31,7 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
         
         textTextField.delegate = self
         translationTextField.delegate = self
+        exampleTextField.delegate = self
 
         //hide record button
         recordButton.isHidden = true
@@ -61,16 +63,14 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        print("view appeared")
-        
         words = Words.readWordsFromArchive()
         if let words = words {
             wordID = words.count + 1
         } else {
             wordID = 1
         }
-                
-        textTextField.isEnabled = false
+        
+        playButton.isHidden = true
         
     }
     
@@ -91,6 +91,10 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
 
         // create word and append to words array
         let word = Word(id: wordID, text: wordText, translation: translationText)
+        
+        if let example = exampleTextField.text {
+            word.example = example
+        }
         
         // if audio has been recorded, set the audio file property name
         if audioRecorded {
@@ -134,6 +138,8 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
             finishRecording(success: false)
+        } else {
+            playButton.isHidden = false
         }
     }
     
