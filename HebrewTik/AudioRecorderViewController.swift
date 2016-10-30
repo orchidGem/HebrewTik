@@ -60,12 +60,6 @@ extension AddWordViewController {
         }
     }
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            finishRecording(success: false)
-        }
-    }
-    
     func playAudio() {
         do {
             let sound = try AVAudioPlayer(contentsOf: audioFilename!)

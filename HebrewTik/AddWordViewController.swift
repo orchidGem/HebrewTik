@@ -44,19 +44,24 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
                 DispatchQueue.main.async {
                     if allowed {
                         // show button
+                        print("allowed")
                         self.recordButton.isHidden = false
                     } else {
                         //failed to record
+                        print("failed to record")
                     }
                 }
             }
         } catch {
             // failed to record
+            print("recording session permission failed")
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        print("view appeared")
         
         words = Words.readWordsFromArchive()
         if let words = words {
@@ -64,9 +69,7 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
         } else {
             wordID = 1
         }
-        
-        print("Word ID: \(wordID)")
-        
+                
         textTextField.isEnabled = false
         
     }
@@ -126,6 +129,12 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
         
         textTextField.isEnabled = true
         textTextField.backgroundColor = UIColor.white
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
     }
     
 }

@@ -133,6 +133,7 @@
 				TargetAttributes = {
 					D1C222A01DBCEC570084156E = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 859LK3T2WH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -302,7 +303,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 859LK3T2WH;
 				INFOPLIST_FILE = HebrewTik/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Laura-Evans.HebrewTik";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,7 +317,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 859LK3T2WH;
 				INFOPLIST_FILE = HebrewTik/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Laura-Evans.HebrewTik";
 				PRODUCT_NAME = "$(TARGET_NAME)";

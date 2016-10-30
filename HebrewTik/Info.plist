@@ -34,5 +34,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>User records example of how a word is pronounced for the language learning app</string>
 </dict>
 </plist>
