@@ -42,6 +42,7 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
         do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
             try recordingSession.setActive(true)
+            try recordingSession.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
             recordingSession.requestRecordPermission() { [unowned self] allowed in
                 DispatchQueue.main.async {
                     if allowed {
