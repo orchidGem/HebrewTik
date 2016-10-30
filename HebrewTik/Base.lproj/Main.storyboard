@@ -537,23 +537,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="................................................................................................" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy7-IX-wDn">
-                                <frame key="frameInset" minX="19" minY="196.5" width="343" height="20.5"/>
+                                <frame key="frameInset" minX="19" minY="197" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-RB-xZa">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-RB-xZa">
                                 <frame key="frameInset" minX="16" minY="239" width="343" height="349"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Examples" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW2-ur-lzJ">
-                                        <frame key="frameInset" minX="118" width="107" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Examples" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW2-ur-lzJ">
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="4sM-El-8Wh">
-                                        <frame key="frameInset" minY="50" width="343" height="299"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="4sM-El-8Wh">
                                         <color key="backgroundColor" red="0.049937303699999998" green="0.41741831229999998" blue="0.5085312971" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="299" id="Sqp-xr-271"/>
@@ -565,12 +562,23 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4sM-El-8Wh" secondAttribute="bottom" id="FwQ-yX-xqR"/>
+                                    <constraint firstItem="KW2-ur-lzJ" firstAttribute="top" secondItem="BCg-RB-xZa" secondAttribute="top" id="Z1a-sj-gsh"/>
+                                    <constraint firstItem="KW2-ur-lzJ" firstAttribute="leading" secondItem="BCg-RB-xZa" secondAttribute="leading" constant="118" id="nx4-hQ-8g8"/>
+                                    <constraint firstItem="4sM-El-8Wh" firstAttribute="leading" secondItem="BCg-RB-xZa" secondAttribute="leading" id="umc-CB-zDV"/>
+                                    <constraint firstAttribute="trailing" secondItem="KW2-ur-lzJ" secondAttribute="trailing" constant="118" id="xlf-zC-QKo"/>
+                                    <constraint firstItem="4sM-El-8Wh" firstAttribute="top" secondItem="KW2-ur-lzJ" secondAttribute="bottom" constant="20" id="zED-4Q-mF9"/>
+                                    <constraint firstAttribute="trailing" secondItem="4sM-El-8Wh" secondAttribute="trailing" id="zgj-9y-nfM"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.074509803921568626" green="0.58039215686274515" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8cG-Ov-cns" firstAttribute="leading" secondItem="a9j-Yv-CMS" secondAttribute="leading" id="0t1-0T-L7X"/>
+                            <constraint firstItem="BCg-RB-xZa" firstAttribute="top" secondItem="zy7-IX-wDn" secondAttribute="bottom" constant="22" id="19X-GW-DQP"/>
                             <constraint firstItem="u9Z-89-1B1" firstAttribute="top" secondItem="ueO-kA-Z7y" secondAttribute="bottom" id="2b6-PX-HNT"/>
+                            <constraint firstItem="BCg-RB-xZa" firstAttribute="centerX" secondItem="ueO-kA-Z7y" secondAttribute="centerX" id="45w-dp-GPx"/>
                             <constraint firstAttribute="trailing" secondItem="ueO-kA-Z7y" secondAttribute="trailing" id="5Hk-Ty-Nph"/>
                             <constraint firstAttribute="trailing" secondItem="8cG-Ov-cns" secondAttribute="trailing" id="7Nu-gX-FT4"/>
                             <constraint firstAttribute="trailing" secondItem="zy7-IX-wDn" secondAttribute="trailing" constant="10" id="Dew-3I-vE7"/>
