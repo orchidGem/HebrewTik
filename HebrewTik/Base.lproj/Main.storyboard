@@ -191,10 +191,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r18-05-FBg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r18-05-FBg">
                                 <rect key="frame" x="0.0" y="616" width="375" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Y9h-bt-y7l"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -218,7 +220,10 @@
                             <constraint firstItem="ZHM-UT-Cjc" firstAttribute="top" secondItem="fC3-nh-vnr" secondAttribute="bottom" constant="40" id="8IB-Pe-IjJ"/>
                             <constraint firstAttribute="trailing" secondItem="ZHM-UT-Cjc" secondAttribute="trailing" constant="40" id="MCn-n8-HbG"/>
                             <constraint firstItem="fC3-nh-vnr" firstAttribute="leading" secondItem="70y-iO-4ty" secondAttribute="leading" id="QqI-UH-yti"/>
+                            <constraint firstItem="6q0-cU-YEy" firstAttribute="top" secondItem="r18-05-FBg" secondAttribute="bottom" id="TKG-MZ-IVJ"/>
                             <constraint firstAttribute="trailing" secondItem="fC3-nh-vnr" secondAttribute="trailing" id="VhI-ar-Tk4"/>
+                            <constraint firstAttribute="trailing" secondItem="r18-05-FBg" secondAttribute="trailing" id="and-wo-beL"/>
+                            <constraint firstItem="r18-05-FBg" firstAttribute="leading" secondItem="70y-iO-4ty" secondAttribute="leading" id="axI-wI-IvG"/>
                             <constraint firstItem="fC3-nh-vnr" firstAttribute="top" secondItem="70y-iO-4ty" secondAttribute="top" id="i4F-h5-3oM"/>
                         </constraints>
                     </view>
