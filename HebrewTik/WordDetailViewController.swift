@@ -17,6 +17,7 @@ class WordDetailViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var translationLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var exampleTextView: UITextView!
     
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class WordDetailViewController: UIViewController, AVAudioPlayerDelegate {
         
         textLabel.text = word?.text
         translationLabel.text = word?.translation
+        exampleTextView.text = word?.example
         
         if let _ = word?.audio {
             playButton.isHidden = false
