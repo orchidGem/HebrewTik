@@ -82,14 +82,19 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     
     @IBAction func addWord(_ sender: AnyObject) {
         
-        print("adding word")
-        
         // if text fields are empty, return
-        guard let wordText = textTextField.text, let translationText = translationTextField.text  else {
+        guard let wordText = textTextField.text, !wordText.isEmpty, let translationText = translationTextField.text, !translationText.isEmpty  else {
             print("must enter text")
+            
+            // Create alert message
+            let alert = UIAlertController(title: "Whoops", message: "Looks like you forgot to put a word and/or a translation", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action) in
+            }))
+            self.present(alert, animated: true, completion: nil)
+
             return
         }
-
+        
         // create word and append to words array
         let word = Word(id: wordID, text: wordText, translation: translationText)
         
