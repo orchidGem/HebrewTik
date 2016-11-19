@@ -81,5 +81,22 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
             wordVC?.wordIndex = indexPath.row
         }
     }
-
+    
+    
+     // Override to support editing the table view.
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                
+                // Remove audio file if exists
+                if let _ = words?[indexPath.row].audio {
+                    words?[indexPath.row].deleteAudioFile()
+                }
+                
+                // Delete the row from the data source
+                words?.remove(at: indexPath.row)
+                if(Words.saveWordsToArchive(words: words!)) {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+         }
+     }
 }

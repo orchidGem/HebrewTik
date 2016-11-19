@@ -68,6 +68,19 @@ class Word: NSObject, NSCoding {
             print("failed")
             return nil
         }
+    }
+    
+    func deleteAudioFile() -> Void {
+        
+        let fileManager = FileManager.default
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(audio!).m4a")
+        
+        do {
+            try fileManager.removeItem(at: audioFilename)
+        }
+        catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }
         
     }
     
