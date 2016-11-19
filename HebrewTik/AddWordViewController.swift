@@ -25,6 +25,8 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
     var words: [Word]?
     var wordID: Int!
     var audioRecorded: Bool = false
+    var editedWord: Word?
+    var editedWordIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,6 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
                 DispatchQueue.main.async {
                     if allowed {
                         // show button
-                        print("allowed")
                         self.recordButton.isHidden = false
                     } else {
                         //failed to record
@@ -59,6 +60,15 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
             // failed to record
             print("recording session permission failed")
         }
+        
+        // If editing a word, set text fields to word's settings
+        if let editedWord = editedWord {
+            print("editing word")
+            textTextField.text = editedWord.text
+            translationTextField.text = editedWord.translation
+            exampleTextField.text = editedWord.example
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,24 +105,36 @@ class AddWordViewController: UIViewController, UITextFieldDelegate, AVAudioRecor
             return
         }
         
-        // create word and append to words array
-        let word = Word(id: wordID, text: wordText, translation: translationText)
-        
-        if let example = exampleTextField.text {
-            word.example = example
-        }
-        
-        // if audio has been recorded, set the audio file property name
-        if audioRecorded {
-            word.audio = "word\(wordID!)"
-        }
-        
-        if let _ = words {
-            words?.insert(word, at: 0)
+        // If editing a word
+        if let editedWord = editedWord {
+            editedWord.text = wordText
+            editedWord.translation = translationText
+            
+            if let example = exampleTextField.text {
+                editedWord.example = example
+            }
+                        
+            words?[editedWordIndex!] = editedWord
+            
         } else {
-            words = [word]
+            // create word and append to words array
+            let word = Word(id: wordID, text: wordText, translation: translationText)
+            
+            if let example = exampleTextField.text {
+                word.example = example
+            }
+            
+            // if audio has been recorded, set the audio file property name
+            if audioRecorded {
+                word.audio = "word\(wordID!)"
+            }
+            
+            if let _ = words {
+                words?.insert(word, at: 0)
+            } else {
+                words = [word]
+            }
         }
-        
         
         if(Words.saveWordsToArchive(words: words!)) {
             self.dismiss(animated: true, completion: nil)

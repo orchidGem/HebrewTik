@@ -237,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTp-aH-hP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3516" y="674.21289355322347"/>
+            <point key="canvasLocation" x="4863" y="651"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dOu-KJ-fpn">
@@ -432,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci8-67-VK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4584.8000000000002" y="711.09445277361328"/>
+            <point key="canvasLocation" x="5431" y="1448"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oHU-Cj-cYM">
@@ -514,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COk-5Y-ex4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5365.6000000000004" y="710.19490254872574"/>
+            <point key="canvasLocation" x="6110" y="1448"/>
         </scene>
         <!--Word Detail View Controller-->
         <scene sceneID="7KM-Af-w5Y">
@@ -611,6 +611,13 @@
                             <constraint firstItem="zy7-IX-wDn" firstAttribute="top" secondItem="Ut5-5j-s1f" secondAttribute="bottom" constant="18.5" id="hJa-FP-6bg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IYk-O9-cGS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zPs-st-bHh">
+                            <connections>
+                                <segue destination="y1V-UW-lbj" kind="presentation" identifier="EditWord" id="qhU-ho-xda"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="exampleTextView" destination="4sM-El-8Wh" id="tgQ-JD-HuK"/>
                         <outlet property="playButton" destination="ueO-kA-Z7y" id="N3V-8s-48n"/>
@@ -648,4 +655,7 @@
     <resources>
         <image name="ic_volume_up" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qhU-ho-xda"/>
+    </inferredMetricsTieBreakers>
 </document>

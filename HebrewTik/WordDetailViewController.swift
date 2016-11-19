@@ -12,6 +12,7 @@ import AVFoundation
 class WordDetailViewController: UIViewController, AVAudioPlayerDelegate {
     
     var word: Word?
+    var wordIndex: Int!
     var audioPlayer: AVAudioPlayer!
 
     @IBOutlet weak var textLabel: UILabel!
@@ -22,6 +23,10 @@ class WordDetailViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
         textLabel.text = word?.text
         translationLabel.text = word?.translation
@@ -32,7 +37,6 @@ class WordDetailViewController: UIViewController, AVAudioPlayerDelegate {
         } else {
             playButton.isHidden = true
         }
-        
     }
     
     @IBAction func playRecording(_ sender: AnyObject) {
@@ -48,6 +52,14 @@ class WordDetailViewController: UIViewController, AVAudioPlayerDelegate {
         playButton.alpha = 1
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditWord" {
+            
+            let addWordVC = segue.destination as? AddWordViewController
+            addWordVC?.editedWord = word
+            addWordVC?.editedWordIndex = wordIndex
+                        
+        }
+    }
 
 }

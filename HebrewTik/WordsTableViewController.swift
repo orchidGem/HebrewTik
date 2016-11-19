@@ -78,7 +78,7 @@ class WordsTableViewController: UIViewController, UITableViewDataSource, UITable
             }
             
             wordVC?.word = words?[indexPath.row]
-            
+            wordVC?.wordIndex = indexPath.row
         }
     }
 
